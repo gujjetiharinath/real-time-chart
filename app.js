@@ -707,7 +707,7 @@
 
     try {
       dom.sendBtn.disabled = true;
-      const res = await fetch('/api/upload', {
+      const res = await fetch('https://real-time-chart-n689.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${state.token}` },
         body: formData

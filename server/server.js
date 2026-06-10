@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..')));
 app.use('/uploads', express.static(uploadsDir));
 
 // Boot sequence: init DB first (async), then mount routes and start
@@ -38,7 +38,7 @@ app.use('/uploads', express.static(uploadsDir));
 
   // SPA fallback
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
   });
 
   // Setup WebSocket
